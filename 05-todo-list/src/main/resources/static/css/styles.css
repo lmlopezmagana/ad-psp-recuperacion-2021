@@ -35,3 +35,11 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+.tachado {
+    text-decoration: line-through;
+}
+
+.caducada {
+    color: #CCC;
+}

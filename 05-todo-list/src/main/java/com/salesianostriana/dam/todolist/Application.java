@@ -22,11 +22,15 @@ public class Application {
 	public CommandLineRunner init(TaskRepository repository) {
 		return args -> {
 
-			repository.save(new Task("Venir a clase el Lunes", LocalDate.now()));
 
-			List<Task> all = repository.findAll();
+			List<Task> tareas = List.of(
+					new Task("Venir a clase el Lunes", LocalDate.now()),
+					new Task("Hacer el ejercicio DEB02", LocalDate.now().minusDays(3))
+			);
 
-			all.forEach(System.out::println);
+			repository.saveAll(tareas);
+
+
 
 		};
 	}
